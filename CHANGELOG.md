@@ -2,6 +2,15 @@
 
 All notable changes to the Resit Saya application will be documented in this file.
 
+## [1.1.0] - 2026-10-24
+
+### Added
+- Production Docker containerization suite:
+  - Backend `Dockerfile` and automated migration `entrypoint.sh`.
+  - Multi-stage frontend `Dockerfile` with optimized Nginx reverse proxy.
+  - Production `docker-compose.yml` with persistent named volumes for database and uploaded receipts.
+  - Root `.env.example` and `.dockerignore`.
+
 ## [1.0.2] - 2026-10-24
 
 ### Added

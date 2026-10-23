@@ -113,13 +113,30 @@ npm run dev
 
 Open **http://localhost:5173** in your browser.
 
-### Production Build
+### Production Deployment (Docker Compose)
+
+The easiest way to run Resit Saya on a server or VM:
 
 ```bash
-cd frontend
-npm run build
-# Output in frontend/dist/ — serve with any static file server
+# Clone the repository
+git clone https://github.com/AlloraCavendish/Resit-Saya.git
+cd Resit-Saya
+
+# Copy and configure environment variables
+cp .env.example .env
+# Edit .env and set a random 32+ character SECRET_KEY
+
+# Build and start containers
+docker compose up -d --build
+
+# Create initial admin account
+docker compose exec backend python -m app.cli create-admin
+
+# (Optional) Seed demo receipts
+docker compose exec backend python -m app.cli seed-demo
 ```
+
+Access the application on port `80` (e.g. `http://<server-ip>`).
 
 ---
 

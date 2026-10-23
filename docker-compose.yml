@@ -1,0 +1,36 @@
+# Purpose: Production Docker Compose orchestration for Resit Saya (backend, frontend Nginx, persistent volumes).
+# Security: Isolates backend on internal container network; mounts persistent data volumes outside web roots.
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:////app/data/resitsaya.db
+      - UPLOAD_DIR=/app/uploads
+      - APP_TIMEZONE=Asia/Kuala_Lumpur
+    volumes:
+      - resitsaya_data:/app/data
+      - resitsaya_uploads:/app/uploads
+    expose:
+      - "8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  resitsaya_data:
+    driver: local
+  resitsaya_uploads:
+    driver: local

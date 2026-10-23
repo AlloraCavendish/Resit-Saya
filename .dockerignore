@@ -1,0 +1,17 @@
+# Purpose: Docker build ignore rules.
+# Security: Prevents secrets, local database, uploads, and large local dependencies from leaking into images.
+
+.git
+.env
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+uploads
+node_modules
+dist
+.pytest_cache
+.ruff_cache
