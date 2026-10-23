@@ -60,3 +60,8 @@ This document tracks milestones, semantic versions, release stages, and function
 * **Automated Tests**: 25/25 passing Pytest unit/integration tests covering auth, rate-limiting, user isolation, receipt math, file security, and purge mechanics.
 * **Linter & Security**: 100% clean Ruff linter checks and 0 known vulnerabilities verified via `pip-audit`.
 * **Responsive Layouts**: Mobile-first responsive UI supporting mobile viewports (<600px with bottom navigation), tablets (600–1023px), and desktops (>=1024px with sidebar navigation).
+
+#### 9. Production Self-Hosting (Hyper-V & Tailscale)
+* **Host Platform**: Dedicated Hyper-V virtual machine (`ResitSaya-Prod`, hostname `resitsaya-prod`) running Ubuntu Server 24.04 LTS.
+* **Orchestration**: Docker Compose managing the FastAPI backend and Nginx frontend with persistent named volumes.
+* **Network Mesh**: Private, encrypted Tailscale network integration enabling secure remote access from mobile and desktop without exposing public ports.

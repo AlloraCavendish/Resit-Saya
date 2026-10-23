@@ -288,7 +288,7 @@ See [SECURITY.md](SECURITY.md) for the full security model. Key points:
 3. **Single currency** — defaults to MYR. Multi-currency is out of scope.
 4. **File types** — only JPEG, PNG, WebP, and PDF are accepted as receipt attachments.
 5. **Timezone** — business logic (e.g., "this month") uses `APP_TIMEZONE` (default `Asia/Kuala_Lumpur`). Timestamps stored in UTC.
-6. **No Docker** — the app runs directly on the host; Docker/Compose support is out of scope.
+6. **Docker containerization** — Docker Compose orchestrates the FastAPI backend and Nginx frontend in production, with persistent volumes for data and uploads.
 7. **No OCR** — receipt data is entered manually; no automatic text extraction from images.
 8. **Default categories** — 10 categories are seeded per new user: Food & Drinks, Groceries, Transport, Shopping, Bills & Utilities, Health, Entertainment, Education, Travel, Other.
 9. **Demo user credentials** — `demo` / `demopassword123` (created by `seed-demo` CLI command).
@@ -298,3 +298,4 @@ See [SECURITY.md](SECURITY.md) for the full security model. Key points:
 13. **Upload size limit** — 10 MB by default (configurable via `MAX_UPLOAD_SIZE_MB`).
 14. **No charts library** — all visualizations use CSS-only bars and progress indicators.
 15. **Responsive breakpoints** — phone < 600px, tablet 600–1023px, desktop ≥ 1024px.
+16. **Self-hosted production environment** — runs on Hyper-V Ubuntu Server (`ResitSaya-Prod`, hostname `resitsaya-prod`) securely accessible via Tailscale mesh VPN.
