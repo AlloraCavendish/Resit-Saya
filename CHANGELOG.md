@@ -2,6 +2,11 @@
 
 All notable changes to the Resit Saya application will be documented in this file.
 
+## [1.0.2] - 2026-10-24
+
+### Added
+- Created `VERSIONLOG.md` documenting the v1.0.0 prototype milestone, architectural overview, and comprehensive feature inventory.
+
 ## [1.0.1] - 2026-10-17
 
 ### Added

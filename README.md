@@ -26,7 +26,7 @@
 
 ```
 resit-saya/
-├── README.md, CHANGELOG.md, SECURITY.md, AGENTS.md, PLAN.md, .gitignore
+├── README.md, CHANGELOG.md, VERSIONLOG.md, SECURITY.md, AGENTS.md, PLAN.md, .gitignore
 ├── backend/
 │   ├── pyproject.toml              # Python deps & tool config
 │   ├── .env.example                # Environment variable template
