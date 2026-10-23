@@ -1,0 +1,250 @@
+/* Purpose: Styling for receipt detail view and attached document renderer. */
+/* Security: Responsive layout styling; adheres to touch-target and overflow constraints. */
+
+.receipt-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.detail-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.detail-back-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+.detail-date {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.detail-actions {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.detail-btn {
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}
+
+/* Detail Grid Layout */
+.detail-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .detail-content-grid {
+    grid-template-columns: 1.2fr 1.8fr;
+  }
+}
+
+.detail-info-card,
+.detail-file-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.detail-section-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-main);
+}
+
+.detail-figures-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+}
+
+.figure-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.figure-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.figure-value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+}
+
+.figure-value.primary {
+  color: var(--color-primary);
+}
+
+.split-explanation-box {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background-color: var(--color-accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.split-icon {
+  font-size: var(--font-size-lg);
+}
+
+.split-text {
+  font-size: var(--font-size-xs);
+  color: #92400e;
+  line-height: 1.5;
+}
+
+.detail-attributes-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+}
+
+.attribute-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+}
+
+.attr-label {
+  color: var(--color-text-muted);
+}
+
+.attr-value {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+.detail-notes-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.notes-heading {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.notes-body {
+  font-size: var(--font-size-sm);
+  background-color: var(--color-bg-subtle);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  white-space: pre-wrap;
+  color: var(--color-text-main);
+}
+
+/* File Display Box */
+.file-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-btn {
+  font-size: var(--font-size-xs);
+  min-height: 34px;
+  padding: var(--space-1) var(--space-3);
+  text-decoration: none;
+}
+
+.file-display-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  min-height: 350px;
+}
+
+.image-display-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.receipt-full-image {
+  max-width: 100%;
+  max-height: 550px;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.pdf-display-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.pdf-icon {
+  font-size: 4rem;
+}
+
+.pdf-name {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+}
+
+.open-pdf-btn {
+  text-decoration: none;
+}
+
+.no-file-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-10);
+  background-color: var(--color-bg-subtle);
+  border: 1px dashed var(--color-border-hover);
+  border-radius: var(--radius-lg);
+  gap: var(--space-3);
+  min-height: 250px;
+}
+
+.no-file-icon {
+  font-size: 3rem;
+  color: var(--color-text-light);
+}
+
+.no-file-text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.add-file-link {
+  font-size: var(--font-size-xs);
+  text-decoration: none;
+}

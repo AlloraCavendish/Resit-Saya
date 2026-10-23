@@ -1,0 +1,152 @@
+/* Purpose: Styling for top navigation bar and synchronized clock. */
+/* Security: Presentation only; ensures clock and user indicators don't shift layout. */
+
+.navbar {
+  height: var(--navbar-height);
+  background-color: var(--color-bg-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--space-4);
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-main);
+  font-size: var(--font-size-md);
+  padding: var(--space-1);
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 1024px) {
+  .navbar-toggle-btn {
+    display: none;
+  }
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+.navbar-brand:hover {
+  text-decoration: none;
+}
+
+.navbar-brand-icon {
+  font-size: var(--font-size-xl);
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  padding: 2px var(--space-3);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.navbar-clock-time {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-text);
+  letter-spacing: 0.05em;
+}
+
+.navbar-clock-date {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Hide clock date on very small phone screens to save space */
+@media (max-width: 420px) {
+  .navbar-clock-date {
+    display: none;
+  }
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar-user-area {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.navbar-username {
+  display: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+@media (min-width: 600px) {
+  .navbar-username {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+  }
+}
+
+.navbar-role-tag {
+  background-color: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+}
+
+.navbar-logout-btn {
+  min-height: 38px;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.navbar-login-link {
+  min-height: 38px;
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+}

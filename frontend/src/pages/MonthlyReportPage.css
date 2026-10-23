@@ -1,0 +1,175 @@
+/* Purpose: Styling for monthly expense reports and category analysis. */
+/* Security: Responsive layout styling; adheres to touch-target and overflow constraints. */
+
+.report-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.month-picker-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.month-nav-btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+}
+
+.month-picker-input {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  width: auto;
+}
+
+.report-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.report-summary-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .report-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-6);
+}
+
+.summary-card-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+.summary-card-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+}
+
+.summary-card-value.primary {
+  color: var(--color-primary);
+}
+
+.summary-card-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.diff-pill {
+  display: inline-block;
+  padding: 3px var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+}
+
+.diff-pill.up {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.diff-pill.down {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+/* Category Breakdown Card */
+.report-breakdown-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-6);
+}
+
+.breakdown-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-main);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.breakdown-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .breakdown-layout {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
+
+.breakdown-bars-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.breakdown-table-col {
+  overflow-x: auto;
+}
+
+.breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.breakdown-table th,
+.breakdown-table td {
+  padding: var(--space-3) var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breakdown-table th {
+  background-color: var(--color-bg-subtle);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.td-cat-name {
+  font-weight: var(--font-weight-medium);
+}
+
+.td-cat-amount {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
+.breakdown-table tfoot th {
+  font-weight: var(--font-weight-bold);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-main);
+}
+
+.empty-report-state {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--color-text-muted);
+}

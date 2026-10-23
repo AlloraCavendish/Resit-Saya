@@ -1,0 +1,72 @@
+/* Purpose: Styling for mobile bottom tab navigation bar. */
+/* Security: Fixed bottom position; visible only on phone viewports (< 600px). */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-nav-height);
+  background-color: var(--color-bg-surface);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 100;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (min-width: 600px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.bottom-nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: var(--touch-target-min);
+  text-decoration: none;
+  color: var(--color-text-muted);
+  gap: 2px;
+  transition: color 0.15s ease;
+}
+
+.bottom-nav-item:hover {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.bottom-nav-item.active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.bottom-nav-icon {
+  font-size: var(--font-size-md);
+  line-height: 1;
+}
+
+.bottom-nav-label {
+  font-size: var(--font-size-xs);
+}
+
+.bottom-nav-add .bottom-nav-icon-add {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+}
+
+.bottom-nav-add.active .bottom-nav-icon-add {
+  background-color: var(--color-primary-hover);
+}

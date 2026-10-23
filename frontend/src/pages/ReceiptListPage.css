@@ -1,0 +1,278 @@
+/* Purpose: Styling for receipts list, filter controls, responsive tables and cards. */
+/* Security: Responsive layout styling; adheres to touch-target and overflow constraints. */
+
+.receipt-list-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.list-add-btn {
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+}
+
+/* Filter Card */
+.filter-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-4);
+}
+
+.search-form {
+  display: flex;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.search-input-wrap {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  pointer-events: none;
+}
+
+.search-input {
+  padding-left: calc(var(--space-6) + var(--space-2));
+}
+
+.search-btn {
+  min-width: 90px;
+}
+
+.filter-controls-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 600px) {
+  .filter-controls-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .filter-controls-grid {
+    grid-template-columns: 2fr 1.5fr 1.5fr 1fr;
+    align-items: flex-end;
+  }
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.filter-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.filter-actions-item {
+  display: flex;
+  align-items: flex-end;
+}
+
+.filter-clear-btn {
+  width: 100%;
+  font-size: var(--font-size-xs);
+}
+
+/* Responsive Data Views: Cards on Mobile, Table on Tablet/Desktop */
+.receipts-mobile-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.receipts-table-container {
+  display: none;
+  padding: 0;
+  overflow-x: auto;
+}
+
+@media (min-width: 600px) {
+  .receipts-mobile-cards {
+    display: none;
+  }
+
+  .receipts-table-container {
+    display: block;
+  }
+}
+
+.receipts-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+
+.receipts-table th,
+.receipts-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.receipts-table th {
+  background-color: var(--color-bg-subtle);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.receipts-table tbody tr:hover {
+  background-color: var(--color-bg-subtle);
+}
+
+.td-date {
+  white-space: nowrap;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.td-merchant {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.table-merchant-link {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  text-decoration: none;
+}
+
+.table-merchant-link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.table-shared-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}
+
+.table-cat-badge {
+  display: inline-block;
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-text);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.td-share {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  white-space: nowrap;
+}
+
+.td-total {
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.table-file-pill {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-info-bg);
+  color: var(--color-info);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.table-action-btns {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.table-btn-view,
+.table-btn-edit {
+  font-size: var(--font-size-xs);
+  padding: 4px var(--space-2);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  text-decoration: none;
+}
+
+.table-btn-view:hover,
+.table-btn-edit:hover {
+  background-color: var(--color-border);
+  text-decoration: none;
+}
+
+.table-btn-del {
+  font-size: var(--font-size-xs);
+  padding: 4px var(--space-2);
+  min-height: 28px;
+  background-color: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+}
+
+.table-btn-del:hover {
+  background-color: var(--color-danger-bg);
+}
+
+/* Pagination */
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+}
+
+.pagination-btn {
+  min-height: 38px;
+  padding: var(--space-1) var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.pagination-info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* Empty State */
+.empty-receipts-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-10);
+  gap: var(--space-3);
+}
+
+.empty-icon {
+  font-size: 3rem;
+}
+
+.empty-text {
+  color: var(--color-text-muted);
+}
+
+.empty-btn-wrap {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}

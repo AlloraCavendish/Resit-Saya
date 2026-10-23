@@ -1,0 +1,162 @@
+/* Purpose: Responsive layout grid, app shell architecture, and screen breakpoint adaptors. */
+/* Security: Responsive shell protecting viewport boundaries; prevents horizontal layout overflows. */
+
+/* Root App Shell */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--color-bg-app);
+}
+
+/* Main App Wrapper (holds sidebar + content) */
+.app-body {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+
+/* Page Content Area */
+.app-main {
+  flex: 1;
+  width: 100%;
+  min-width: 0; /* Prevents flex children from overflowing horizontally */
+  padding: var(--space-4);
+  /* Leave space at bottom for mobile bottom-nav */
+  padding-bottom: calc(var(--bottom-nav-height) + var(--space-6));
+}
+
+/* Centered container with max-width */
+.content-container {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Page Header Block */
+.page-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.page-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+}
+
+.page-subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Shared Card Surface */
+.card-surface {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Grid & Flex Helpers */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* Buttons Variants */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-main);
+  border-color: var(--color-border);
+}
+.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+  border-color: var(--color-border-hover);
+}
+
+.btn-danger {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+  border-color: var(--color-danger);
+}
+.btn-danger:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+}
+
+.btn-danger-outline {
+  background-color: transparent;
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+.btn-danger-outline:hover:not(:disabled) {
+  background-color: var(--color-danger-bg);
+}
+
+/* Responsive Rules for Tablet (600px - 1023px) */
+@media (min-width: 600px) {
+  .app-main {
+    padding: var(--space-6);
+    padding-bottom: calc(var(--bottom-nav-height) + var(--space-6));
+  }
+
+  .page-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive Rules for Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .app-main {
+    padding: var(--space-8);
+    padding-bottom: var(--space-8); /* No bottom-nav padding needed on desktop */
+    margin-left: var(--sidebar-width); /* Offset for fixed/persistent sidebar */
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

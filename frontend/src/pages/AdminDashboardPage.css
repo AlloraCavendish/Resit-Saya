@@ -1,0 +1,254 @@
+/* Purpose: Styling for administrator aggregate dashboard and audit log viewer. */
+/* Security: Responsive layout styling; adheres to touch-target and overflow constraints. */
+
+.admin-dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.admin-users-btn {
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+}
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-danger {
+  color: var(--color-danger);
+}
+
+/* 30-Day Activity Bar Chart */
+.trend-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.trend-subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.trend-bars-container {
+  display: flex;
+  align-items: flex-end;
+  height: 180px;
+  gap: 6px;
+  padding: var(--space-4) 0 var(--space-2);
+  overflow-x: auto;
+}
+
+.trend-bar-col {
+  flex: 1;
+  min-width: 14px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.trend-bar-track {
+  width: 100%;
+  max-width: 24px;
+  height: 130px;
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.trend-bar-fill {
+  width: 100%;
+  height: var(--bar-height, 0%);
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  transition: height 0.3s ease;
+}
+
+.trend-bar-count {
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  height: 12px;
+}
+
+.trend-bar-date {
+  font-size: 9px;
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+/* Section Cards & Tables */
+.admin-section-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+}
+
+.admin-section-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+@media (min-width: 600px) {
+  .admin-section-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.table-responsive-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-table th {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+}
+
+.role-badge,
+.status-badge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+}
+
+.role-badge.admin {
+  background-color: var(--color-accent-light);
+  color: #92400e;
+}
+
+.role-badge.user {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+}
+
+.status-badge.active {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.status-badge.disabled {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+/* Audit Logs */
+.audit-filter-form {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.audit-filter-select {
+  min-height: 36px;
+  font-size: var(--font-size-xs);
+  padding: var(--space-1) var(--space-3);
+  width: auto;
+}
+
+.audit-filter-btn {
+  min-height: 36px;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+}
+
+.event-badge {
+  display: inline-block;
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-main);
+}
+
+.event-login_failed,
+.event-user_disabled {
+  background-color: var(--color-danger-bg);
+  color: var(--color-danger);
+}
+
+.event-login_success,
+.event-user_enabled {
+  background-color: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.event-purge_job_run {
+  background-color: var(--color-info-bg);
+  color: var(--color-info);
+}
+
+.td-audit-time {
+  white-space: nowrap;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.td-mono {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+}
+
+.td-detail {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.empty-audit-msg {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-8);
+}

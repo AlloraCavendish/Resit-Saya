@@ -1,0 +1,132 @@
+/* Purpose: Styling for trash page and retention countdown items. */
+/* Security: Responsive layout styling; adheres to touch-target and overflow constraints. */
+
+.trash-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.trash-notice-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background-color: var(--color-info-bg);
+  border: 1px solid var(--color-info);
+  padding: var(--space-4) var(--space-5);
+}
+
+.notice-icon {
+  font-size: var(--font-size-xl);
+  line-height: 1;
+}
+
+.notice-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.notice-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: #075985;
+}
+
+.notice-desc {
+  font-size: var(--font-size-sm);
+  color: #0c4a6e;
+  line-height: 1.5;
+}
+
+/* Responsive Views */
+.trash-mobile-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.trash-table-container {
+  display: none;
+  padding: 0;
+  overflow-x: auto;
+}
+
+@media (min-width: 600px) {
+  .trash-mobile-cards {
+    display: none;
+  }
+  .trash-table-container {
+    display: block;
+  }
+}
+
+.trash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+  text-align: left;
+}
+
+.trash-table th,
+.trash-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.trash-table th {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+}
+
+.td-amount {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-main);
+}
+
+.td-sub-notes {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  font-weight: normal;
+}
+
+.retention-pill {
+  font-size: var(--font-size-xs);
+  color: var(--color-warning);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-warning-bg);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.trash-actions-group {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.btn-sm {
+  min-height: 32px;
+  padding: 2px var(--space-3);
+  font-size: var(--font-size-xs);
+}
+
+.empty-trash-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12);
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.empty-trash-card .empty-icon {
+  font-size: 3rem;
+}
+
+.empty-trash-card .empty-text {
+  color: var(--color-text-muted);
+}

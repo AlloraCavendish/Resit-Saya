@@ -1,0 +1,89 @@
+/* Purpose: Styling for login screen. */
+/* Security: Centered card layout with responsive padding; adheres to touch-target and input sizes. */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  background-color: var(--color-bg-app);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+@media (min-width: 600px) {
+  .login-card {
+    padding: var(--space-8);
+  }
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+}
+
+.login-logo-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.login-title {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.login-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+.login-submit-btn {
+  width: 100%;
+  margin-top: var(--space-2);
+  font-size: var(--font-size-base);
+}
+
+.login-footer {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+}
+
+.login-notice {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+}

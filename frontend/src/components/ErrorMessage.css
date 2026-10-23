@@ -1,0 +1,47 @@
+/* Purpose: Styling for error message banners and retry buttons. */
+/* Security: Presentation only; color contrast conforming to accessibility standards. */
+
+.error-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background-color: var(--color-danger-bg);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.error-icon {
+  font-size: var(--font-size-lg);
+  line-height: 1;
+}
+
+.error-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.error-text {
+  color: var(--color-danger);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.error-retry-btn {
+  align-self: flex-start;
+  background-color: transparent;
+  color: var(--color-danger);
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  min-height: 32px;
+}
+
+.error-retry-btn:hover {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+}

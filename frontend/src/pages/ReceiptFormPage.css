@@ -1,0 +1,177 @@
+/* Purpose: Styling for receipt add/edit form, currency inputs, and file upload preview. */
+/* Security: Responsive layout styling; adheres to touch-target and input sizes. */
+
+.receipt-form-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-back-link {
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+}
+
+.form-card {
+  padding: var(--space-6);
+}
+
+@media (min-width: 600px) {
+  .form-card {
+    padding: var(--space-8);
+  }
+}
+
+.receipt-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .form-row-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-main);
+}
+
+.form-label.required::after {
+  content: " *";
+  color: var(--color-danger);
+}
+
+.currency-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.currency-prefix {
+  position: absolute;
+  left: var(--space-4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  font-size: var(--font-size-base);
+  pointer-events: none;
+}
+
+.currency-input {
+  padding-left: calc(var(--space-8) + var(--space-2));
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.field-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  line-height: 1.4;
+}
+
+/* File Upload & Preview */
+.file-upload-section {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.file-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.file-input-native {
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.file-input-hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.existing-file-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.existing-file-info {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-main);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.remove-file-btn {
+  min-height: 34px;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-xs);
+  flex-shrink: 0;
+}
+
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.preview-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+}
+
+.receipt-image-preview {
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-subtle);
+}
+
+/* Form Actions */
+.form-submit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.form-cancel-btn {
+  text-decoration: none;
+}
+
+.form-save-btn {
+  min-width: 140px;
+}

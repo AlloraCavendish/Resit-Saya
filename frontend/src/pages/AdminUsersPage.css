@@ -1,0 +1,212 @@
+/* Purpose: Styles for the admin user management page.
+   Security: No sensitive data rendered here except what the API returns for admins. */
+
+.admin-users-page {
+  padding: var(--space-4);
+  max-width: 1200px;
+}
+
+.admin-users-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.admin-users-header h1 {
+  margin: 0;
+  font-size: var(--text-2xl);
+}
+
+/* Create panel */
+.admin-users-create-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.admin-users-create-panel h2 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xl);
+}
+
+.admin-users-create-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.admin-users-create-form .form-group:last-of-type,
+.admin-users-create-form .form-actions {
+  grid-column: 1 / -1;
+}
+
+/* Table */
+.admin-users-table-section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.admin-users-table th,
+.admin-users-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-users-table th {
+  background: var(--color-bg);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.admin-users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-users-table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.admin-users-table tr.row-disabled {
+  opacity: 0.55;
+}
+
+.username-cell {
+  font-weight: 600;
+  margin-right: var(--space-1);
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge-admin { background: var(--color-primary-subtle); color: var(--color-primary); }
+.badge-user  { background: var(--color-border); color: var(--color-text-muted); }
+.badge-ok    { background: #d1fae5; color: #065f46; }
+.badge-off   { background: #fee2e2; color: #991b1b; }
+.badge-warn  { background: #fef3c7; color: #92400e; }
+
+/* Actions */
+.actions-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.btn-sm {
+  padding: 4px 10px;
+  font-size: var(--text-xs);
+  min-height: 28px;
+}
+
+.empty-row {
+  text-align: center;
+  color: var(--color-text-muted);
+  padding: var(--space-6);
+}
+
+/* Reset password modal box */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: var(--space-4);
+}
+
+.modal-box {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-box h2 {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xl);
+}
+
+/* Responsive — card style on mobile */
+@media (max-width: 599px) {
+  .admin-users-create-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-users-create-form .form-group:last-of-type,
+  .admin-users-create-form .form-actions {
+    grid-column: 1;
+  }
+
+  .admin-users-table thead {
+    display: none;
+  }
+
+  .admin-users-table,
+  .admin-users-table tbody,
+  .admin-users-table tr,
+  .admin-users-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .admin-users-table tr {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+    padding: var(--space-3);
+  }
+
+  .admin-users-table td {
+    border: none;
+    padding: var(--space-1) 0;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .admin-users-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .actions-cell {
+    flex-direction: row;
+  }
+}
+
