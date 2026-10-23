@@ -1,3 +1,4 @@
+📜 [Version Log](VERSIONLOG.md) · [Changelog](CHANGELOG.md) · [Security](SECURITY.md)
 # Resit Saya — Privacy-First Personal Expense & Receipt Tracker
 
 <!-- Purpose: Project documentation — setup, features, API reference, and security notes. -->
