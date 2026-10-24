@@ -1,0 +1,9 @@
+# Purpose: Crawler navigation directives for Resit Saya.
+# Security: Prevents search engines and web crawlers from indexing private administrative and API routes.
+
+User-agent: *
+Disallow: /api/
+Disallow: /admin
+Disallow: /admin/
+Disallow: /trash
+Disallow: /settings

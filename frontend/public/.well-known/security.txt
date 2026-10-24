@@ -1,0 +1,8 @@
+# Purpose: RFC 9116 security vulnerability reporting contact file.
+# Security: Facilitates responsible disclosure without exposing internal details.
+
+Contact: mailto:aeiman8667@gmail.com
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: en, ms
+Canonical: https://resitsaya-prod.tail1c7b89.ts.net/.well-known/security.txt
+Policy: https://github.com/AlloraCavendish/Resit-Saya/blob/main/SECURITY.md

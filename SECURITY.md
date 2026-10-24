@@ -44,13 +44,18 @@ Resit Saya is designed to store private financial and personal expense data, inc
 - Paths are validated against directory traversal attacks before filesystem operations.
 - Soft-deleted receipts are retained for `RETENTION_DAYS` (default 30 days) and then permanently purged along with their files from disk.
 
-### HTTP Security Headers
-All backend responses include the following headers:
-- `Content-Security-Policy`: Restricts script and resource loading.
-- `X-Content-Type-Options: nosniff`: Prevents MIME-type sniffing.
-- `X-Frame-Options: DENY`: Prevents clickjacking.
-- `Referrer-Policy: strict-origin-when-cross-origin`: Minimizes referrer leakage.
-- `Permissions-Policy`: Restricts camera, microphone, and geolocation access unless explicitly needed.
+### HTTP Security Headers & Production Hardening
+Both Nginx (front-facing entrypoint) and the FastAPI backend inject comprehensive security headers on all responses:
+- `Strict-Transport-Security: max-age=31536000; includeSubDomains`: Enforces HTTPS transport for 1 year.
+- `Content-Security-Policy`: Restricts script execution, frame ancestors, and asset loading.
+- `X-Frame-Options: DENY`: Blocks framing and clickjacking attacks.
+- `X-Content-Type-Options: nosniff`: Prevents MIME-type sniffing exploits.
+- `Referrer-Policy: strict-origin-when-cross-origin`: Restricts URL referrer leakage.
+- `Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()`: Completely disables unused device APIs.
+- `Cross-Origin-Opener-Policy: same-origin`: Protects against cross-origin XS-Leaks.
+- `X-Permitted-Cross-Domain-Policies: none`: Blocks cross-domain policy access.
+- `server_tokens off`: Suppresses Nginx and application server version banners.
+- `robots.txt` & `.well-known/security.txt`: Search crawler access restrictions and RFC 9116 security vulnerability reporting contact.
 
 ---
 

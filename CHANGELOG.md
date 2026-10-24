@@ -2,6 +2,19 @@
 
 All notable changes to the Resit Saya application will be documented in this file.
 
+## [1.2.1] - 2026-10-24
+
+### Security
+- Production security header hardening addressing Pentest-Tools and RedSentinel vulnerability audits:
+  - Enabled HTTP Strict-Transport-Security (`HSTS`) with 1-year duration and `includeSubDomains`.
+  - Implemented comprehensive `Content-Security-Policy` (`CSP`) across Nginx and FastAPI responses.
+  - Enforced `X-Frame-Options: DENY` (clickjacking defense) and `X-Content-Type-Options: nosniff` (MIME sniffing defense).
+  - Enforced `Referrer-Policy: strict-origin-when-cross-origin` in headers and HTML meta tags.
+  - Added `Permissions-Policy` disabling unused camera, microphone, geolocation, and payment APIs.
+  - Added `Cross-Origin-Opener-Policy: same-origin` to isolate browsing context against XS-Leaks.
+  - Suppressed Nginx and backend server version headers (`server_tokens off;`, `proxy_hide_header Server;`).
+  - Added `robots.txt` disallowing crawler indexing on administrative/API routes and RFC 9116 `.well-known/security.txt`.
+
 ## [1.2.0] - 2026-10-24
 
 ### Added
