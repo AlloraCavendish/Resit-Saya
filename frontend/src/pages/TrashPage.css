@@ -30,12 +30,12 @@
 .notice-title {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-bold);
-  color: #075985;
+  color: var(--color-info);
 }
 
 .notice-desc {
   font-size: var(--font-size-sm);
-  color: #0c4a6e;
+  color: var(--color-text-main);
   line-height: 1.5;
 }
 

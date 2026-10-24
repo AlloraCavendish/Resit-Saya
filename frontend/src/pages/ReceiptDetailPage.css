@@ -110,7 +110,7 @@
 
 .split-text {
   font-size: var(--font-size-xs);
-  color: #92400e;
+  color: var(--color-accent);
   line-height: 1.5;
 }
 

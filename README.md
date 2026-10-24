@@ -20,6 +20,7 @@
 - **Trash & retention** — soft-deleted receipts with a configurable retention period (default 30 days) and automatic daily purge.
 - **Admin dashboard** — aggregate system metrics, user management, and audit logs. Admins **cannot** view other users' financial data.
 - **Responsive design** — mobile-first with bottom tab nav on phones, collapsible sidebar on tablets, persistent sidebar on desktop.
+- **Dark mode theme switch** — toggle between Light Mode (default) and Dark Mode with instant localStorage persistence.
 
 ---
 

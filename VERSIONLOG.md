@@ -65,3 +65,8 @@ This document tracks milestones, semantic versions, release stages, and function
 * **Host Platform**: Dedicated Hyper-V virtual machine (`ResitSaya-Prod`, hostname `resitsaya-prod`) running Ubuntu Server 24.04 LTS.
 * **Orchestration**: Docker Compose managing the FastAPI backend and Nginx frontend with persistent named volumes.
 * **Network Mesh**: Private, encrypted Tailscale network integration enabling secure remote access from mobile and desktop without exposing public ports.
+
+#### 10. Theming & Dark Mode
+* **Theme System**: Full Light Mode (default) and Dark Mode themes controlled by user preference.
+* **Persistent & Synchronized**: Managed via `useTheme` hook with `localStorage` persistence and multi-instance event synchronization.
+* **Accessible Controls**: One-click theme toggle in top navigation bar (`Navbar`), login screen, and detailed setting in Account Settings.

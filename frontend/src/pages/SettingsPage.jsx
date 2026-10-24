@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
+import { useTheme } from "../hooks/useTheme";
 import * as authApi from "../api/auth";
 import { formatDate } from "../utils/date";
 import { ErrorMessage } from "../components/ErrorMessage";
@@ -10,6 +11,7 @@ import "./SettingsPage.css";
 
 export function SettingsPage() {
   const { user } = useAuth();
+  const { isDark, toggleTheme } = useTheme();
 
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -84,6 +86,32 @@ export function SettingsPage() {
             <span className="profile-label">Member Since</span>
             <span className="profile-value">{formatDate(user?.created_at)}</span>
           </div>
+        </div>
+      </div>
+
+      {/* Appearance / Theme Card */}
+      <div className="card-surface settings-card">
+        <h2 className="settings-section-title">Appearance</h2>
+        <p className="settings-section-desc">
+          Customize the visual appearance of the application. Light mode is enabled by default.
+        </p>
+        <div className="theme-setting-row">
+          <div className="theme-setting-status">
+            <span className="theme-setting-icon" aria-hidden="true">{isDark ? "🌙" : "☀️"}</span>
+            <div>
+              <div className="theme-setting-name">{isDark ? "Dark Mode" : "Light Mode"}</div>
+              <div className="theme-setting-sub">
+                {isDark ? "Easy on the eyes in low light" : "Crisp and clear daytime view"}
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="btn-secondary theme-setting-toggle-btn"
+            onClick={toggleTheme}
+          >
+            {isDark ? "Switch to Light Mode ☀️" : "Switch to Dark Mode 🌙"}
+          </button>
         </div>
       </div>
 

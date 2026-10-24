@@ -8,6 +8,14 @@ import './styles/base.css';
 import './styles/layout.css';
 import App from './App';
 
+// Initialize theme from storage immediately before first render to prevent flicker
+try {
+  const savedTheme = localStorage.getItem('resitsaya-theme') || 'light';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+} catch {
+  document.documentElement.setAttribute('data-theme', 'light');
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App />

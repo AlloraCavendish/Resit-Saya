@@ -4,12 +4,14 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { useTheme } from "../hooks/useTheme";
 import { ErrorMessage } from "../components/ErrorMessage";
 import "./LoginPage.css";
 
 export function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const { isDark, toggleTheme } = useTheme();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -42,6 +44,17 @@ export function LoginPage() {
 
   return (
     <div className="login-container">
+      {/* Dark mode toggle on login page */}
+      <button
+        type="button"
+        className="login-theme-btn"
+        onClick={toggleTheme}
+        aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {isDark ? "☀️" : "🌙"}
+      </button>
+
       <div className="login-card">
         <div className="login-header">
           <span className="login-logo-icon" aria-hidden="true">🧾</span>

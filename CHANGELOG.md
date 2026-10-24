@@ -2,6 +2,16 @@
 
 All notable changes to the Resit Saya application will be documented in this file.
 
+## [1.2.0] - 2026-10-24
+
+### Added
+- Dark mode theme switcher with light mode as the default:
+  - Custom `useTheme` hook with `localStorage` persistence and cross-tab/cross-component synchronization.
+  - Quick toggle button in the top navigation bar (`Navbar`) and login screen.
+  - Dedicated theme customization card in Account Settings (`SettingsPage`).
+  - Comprehensive dark token overrides in `tokens.css` and `base.css` covering surfaces, text contrast, borders, and input controls.
+  - Zero-flicker theme hydration on application startup in `main.jsx`.
+
 ## [1.1.0] - 2026-10-24
 
 ### Added

@@ -107,11 +107,11 @@
   letter-spacing: 0.02em;
 }
 
-.badge-admin { background: var(--color-primary-subtle); color: var(--color-primary); }
+.badge-admin { background: var(--color-primary-subtle, var(--color-primary-light)); color: var(--color-primary); }
 .badge-user  { background: var(--color-border); color: var(--color-text-muted); }
-.badge-ok    { background: #d1fae5; color: #065f46; }
-.badge-off   { background: #fee2e2; color: #991b1b; }
-.badge-warn  { background: #fef3c7; color: #92400e; }
+.badge-ok    { background: var(--color-success-bg); color: var(--color-success); }
+.badge-off   { background: var(--color-danger-bg); color: var(--color-danger); }
+.badge-warn  { background: var(--color-warning-bg); color: var(--color-warning); }
 
 /* Actions */
 .actions-cell {

@@ -1,16 +1,18 @@
-// Purpose: Top navbar with live server clock, user identity, and session termination.
+// Purpose: Top navbar with live server clock, user identity, dark mode toggle, and session termination.
 // Security: Renders authenticated username safely; executes secure server-side logout.
 
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useServerClock } from "../hooks/useServerClock";
+import { useTheme } from "../hooks/useTheme";
 import "./Navbar.css";
 
 export function Navbar({ onToggleSidebar }) {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const { timeStr, dateStr } = useServerClock();
+  const { isDark, toggleTheme } = useTheme();
 
   const handleLogout = async () => {
     await logout();
@@ -45,6 +47,17 @@ export function Navbar({ onToggleSidebar }) {
         </div>
 
         <div className="navbar-right">
+          {/* Dark Mode Toggle */}
+          <button
+            type="button"
+            className="navbar-theme-btn"
+            onClick={toggleTheme}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {isDark ? "☀️" : "🌙"}
+          </button>
+
           {user ? (
             <div className="navbar-user-area">
               <span className="navbar-username">

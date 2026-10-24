@@ -124,7 +124,7 @@
 
 .admin-link.active {
   background-color: var(--color-accent-light);
-  color: #92400e;
+  color: var(--color-accent);
 }
 
 .sidebar-icon {

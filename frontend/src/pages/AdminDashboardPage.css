@@ -166,7 +166,7 @@
 
 .role-badge.admin {
   background-color: var(--color-accent-light);
-  color: #92400e;
+  color: var(--color-accent);
 }
 
 .role-badge.user {
